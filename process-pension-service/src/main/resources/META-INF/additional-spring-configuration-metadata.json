@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "url.app.auth",
+    "type": "java.lang.String",
+    "description": "A description for 'url.app.auth'"
+  },
+  {
+    "name": "url.app.details",
+    "type": "java.lang.String",
+    "description": "A description for 'url.app.details'"
+  }
+]}
