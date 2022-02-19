@@ -1,0 +1,37 @@
+
+
+<div class="container mt-5 " >
+
+  <h1 class="text-center" >
+    Hi {{pensionerName.name}} , Your Pension Details are here
+  </h1>
+  <div class="shadow-lg p-3 mb-5 bg-white rounded mt ml mr" id="mydiv" >
+
+  <ng-container *ngIf="pensionDetails">
+
+      <table class="table table-striped" id="tab">
+
+              <tr>
+
+                  <th>Pension Amount</th>
+
+                  <td>{{pensionDetails.pensionAmount | currency:"INR":"symbol" }}</td>
+
+              </tr>
+
+              <tr>
+
+                  <th>Bank Service Charges</th>
+
+                  <td>{{pensionDetails.bankServiceCharge | currency:"INR":"symbol"}}</td>
+
+              </tr>
+
+              </table>
+
+              </ng-container>
+
+              </div>
+
+</div>
+

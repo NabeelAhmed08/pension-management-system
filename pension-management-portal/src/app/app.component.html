@@ -1,0 +1,50 @@
+<mat-sidenav-container class="sidenav-container">
+
+  <mat-sidenav  color="primary"  #drawer class="sidenav bg-clr-bl" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar color="bg-clr-bl" >
+
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#"><mat-icon aria-label="Side nav toggle icon">home</mat-icon></a>
+      <a mat-list-item href="#" [routerLink]="['/pensioner/list']"><mat-icon aria-label="Side nav toggle icon">list</mat-icon></a>
+      <!-- <a mat-list-item href="/pension">pension</a> -->
+      <!-- <a mat-list-item href="view/123">View/id</a> -->
+      <!-- <a mat-list-item href="/pensioner/list">list</a> -->
+      <!-- <a mat-list-item href="/login">login</a> -->
+      <a mat-list-item href="#" (click)="logoutUser()" ><mat-icon>exit_to_app</mat-icon></a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content  >
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Pension Management Portal</span>
+      <span class="example-spacer"></span>
+
+<div  *ngIf="loggedIn" >
+  <app-search-pensioner> </app-search-pensioner>
+</div>
+
+
+  <a [routerLink]="['login']">
+    <button *ngIf="!loggedIn" mat-flat-button color="primary" >Login</button>
+  </a>
+      <button *ngIf="loggedIn" (click)="logoutUser()" mat-flat-button color="primary">Logout</button>
+
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

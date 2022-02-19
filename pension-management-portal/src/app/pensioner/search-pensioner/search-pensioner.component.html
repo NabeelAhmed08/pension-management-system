@@ -1,0 +1,17 @@
+<div >
+  <form  [formGroup]="searchPensionerForm" (submit)="searchPensioner()" >
+    <div class="searchbox mt-3 mx-2">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" formControlName="aadharNumber" placeholder="Aadhar No ...." aria-label="Aadhar No ....">
+        <button type="submit" mat-mini-fab color="primary" >
+          <mat-icon>search</mat-icon>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+
+

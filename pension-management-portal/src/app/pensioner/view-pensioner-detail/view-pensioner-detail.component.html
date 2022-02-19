@@ -1,0 +1,78 @@
+
+<div class=" container" >
+
+
+  <div class=" mt-3 card  justify-content-center" >
+    <mat-card  *ngIf="pensionerDetails" Class=" text-center"  >
+      <mat-card-title class="text-center" >
+        {{pensionerDetails.name | uppercase}}`S Details
+      </mat-card-title>
+
+      <mat-card-content>
+
+
+        <table class=" text-center table table-hover ">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Value</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">AadharNumber</th>
+              <td>  {{ pensionerDetails.aadharNumber}}</td>
+
+            </tr>
+            <tr>
+              <th scope="row">Name</th>
+              <td> {{ pensionerDetails.name}}</td>
+
+            </tr>
+            <tr>
+              <th scope="row">Date Of Birth</th>
+              <td > {{ pensionerDetails.dateOfBirth | date  }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Salary Earned</th>
+              <td colspan="1">  {{ pensionerDetails.salaryEarned | currency:"INR":"symbol" }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Allowances</th>
+              <td colspan="1">{{ pensionerDetails.allowances | currency:"INR":"symbol" }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Pension Type</th>
+              <td colspan="1"> {{ pensionerDetails.pensionType | uppercase}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Bank Name</th>
+              <td colspan="1"> {{ pensionerDetails.bank.name}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Bank Type</th>
+              <td colspan="1"> {{ pensionerDetails.bank.bankType  | uppercase}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Account Number</th>
+              <td colspan="1"> {{ pensionerDetails.bank.accountNumber}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </mat-card-content>
+
+    <div class="text-center" >
+      <button mat-raised-button color="accent"  (click)="processPension()" >Process Pension</button>
+
+    </div>
+
+    </mat-card>
+
+  </div>
+
+
+
+</div>
+
