@@ -25,6 +25,7 @@ output
 .metadata
 .vscode
 *.war
+*.jar
 *.js
 *.js.map
 PhantomJS_*
